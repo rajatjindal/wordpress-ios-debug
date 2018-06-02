@@ -9,13 +9,18 @@ import (
 )
 
 var records = map[string]string{
-	"test.service.":         "192.168.0.2",
-	"blog.rajatjindal.com.": "192.168.0.102",
+	"test.service.":                  "192.168.0.2",
+	"blog.rajatjindal.com.":          "192.168.0.103",
+	"carenshare.zindagisikhati.com.": "192.168.0.103",
+	"myblog.com.":                    "192.168.0.103",
 }
 
+//ServeDNS serves fake dns
 func ServeDNS() {
 	// attach request handler func
 	dns.HandleFunc("rajatjindal.com.", handleDnsRequest)
+	dns.HandleFunc("zindagisikhati.com.", handleDnsRequest)
+	dns.HandleFunc("myblog.com.", handleDnsRequest)
 
 	// start server
 	port := 53
