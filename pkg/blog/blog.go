@@ -80,8 +80,8 @@ func (p *proxy) ServeHTTP(wr http.ResponseWriter, req *http.Request) {
 	}
 
 	req.URL = &url.URL{
-		Scheme: "http",
-		Host:   "localhost",
+		Scheme: "https",
+		Host:   "blog.rajatjindal.com",
 		Path:   req.URL.String(),
 	}
 
